@@ -1,0 +1,155 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:pr10.models"
+        mc:Ignorable="d" Width="500" Height="740"
+        x:Class="pr10.AddorEditProduct"
+        Title="Добавить продукт"
+        CanResize="False"
+        Closed="TopLevel_OnClosed">
+        <Grid Margin="10">
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock 
+                        Name="tbId"
+                        Grid.Row="0" 
+                        Text="Id продукта:"/>
+                <TextBox Name ="Id"
+                         Grid.Row="1"
+                         IsEnabled="False"/>
+                <TextBlock 
+                        Grid.Row="2" 
+                        Text="Артикуль:"/>
+                <TextBox 
+                        Grid.Row="3" 
+                        Name="ArticleTextBox" />
+                <TextBlock 
+                        Grid.Row="4" 
+                        Text="Название:"/>
+                <TextBox 
+                        Grid.Row="5" 
+                        Name="NameTextBox" />
+                <TextBlock 
+                        Grid.Row="6" 
+                        Text="Еденица измерения:"/>
+                <ComboBox 
+                        Grid.Row="7" 
+                        Name="UnitComboBox" 
+                        PlaceholderText="Select Unit">
+                        <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:UnitMeasurement">
+                                        <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock 
+                        Grid.Row="8" 
+                        Text="Цена:"/>
+                <TextBox 
+                        Grid.Row="9" 
+                        Name="PriceTextBox" 
+                        TextChanged="MaxSaleTextBox_OnTextChanged"/>
+                <TextBlock 
+                        Grid.Row="10" 
+                        Text="Максимальная скидка:"/>
+                <TextBox 
+                        Grid.Row="11" 
+                        Name="MaxSaleTextBox"
+                        TextChanged="MaxSaleTextBox_OnTextChanged">
+                </TextBox>
+                <TextBlock 
+                        Grid.Row="12" 
+                        Text="Производитель:"/>
+                <ComboBox 
+                        Grid.Row="13" 
+                        Name="ManufacturerComboBox" 
+                        PlaceholderText="Select Manufacture">
+                        <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:Manufacture">
+                                        <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock 
+                        Grid.Row="14" 
+                        Text="Потсавщик:"/>
+                <ComboBox 
+                        Grid.Row="15" 
+                        Name="ProvderComboBox" 
+                        PlaceholderText="Select Provider">
+                        <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:Provider">
+                                        <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock 
+                        Grid.Row="16" 
+                        Text="Категория:"/>
+                <ComboBox 
+                        Grid.Row="17" 
+                        Name="CategoryComboBox" 
+                        PlaceholderText="Select Category">
+                        <ComboBox.ItemTemplate>
+                                <DataTemplate x:DataType="models:Category">
+                                        <TextBlock Text="{Binding Name}"/>
+                                </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                </ComboBox>
+                <TextBlock 
+                        Grid.Row="18" 
+                        Text="Текущая скидка:"/>
+                <TextBox 
+                        Grid.Row="19" 
+                        Name="CurrentSaleTextBox"
+                        TextChanged="MaxSaleTextBox_OnTextChanged">
+                </TextBox>
+                <TextBlock 
+                        Grid.Row="20" 
+                        Text="Количество :"/>
+                <TextBox 
+                        Grid.Row="21" 
+                        Name="CountTextBox"
+                        TextChanged="MaxSaleTextBox_OnTextChanged">
+                </TextBox>
+                <TextBlock 
+                        Grid.Row="22" 
+                        Text="Описание :"/>
+                
+                <TextBox 
+                        Height="100" AcceptsReturn="True" TextWrapping="Wrap"
+                        Grid.Row="23" 
+                        Name="DescriptionTextBox"
+                        >
+                </TextBox>
+                <Button 
+                        Name="Button"
+                        Grid.Row="24" Content="Добавить продукт" Click="Add"/>
+        </Grid>
+</Window>

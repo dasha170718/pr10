@@ -1,0 +1,38 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="pr10.MainWindow"
+        Width="800" Height="600"
+        CanResize="False"
+        Title="Окно авторизации">
+    <StackPanel HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="20"  >
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="Login" FontSize="25" Margin="10">
+                                                            
+            </TextBlock>
+            <TextBox Height="80" Width="400"  Margin="10"  FontSize="35" MaxLength="30" x:Name="LoginBOX"
+                     Text="EgorkaSweg">
+                
+            </TextBox>
+            
+        </WrapPanel>
+        
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" Margin="20">
+            <TextBlock Text="Введите пароль пж" FontSize="25" Margin="10" >
+                                                            
+            </TextBlock>
+            <TextBox Height="80" Width="400" Margin="10"  FontSize="35" PasswordChar="*" MaxLength="30" x:Name="PasswordBOX" 
+                     Text="123456">
+                
+            </TextBox>
+            
+        </WrapPanel>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button Name= "ButtonLog" Height="60" Width="300" Margin="20" Content="Войти" FontSize="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  Click="Button_OnClick">  </Button>
+            <Button Height="60" Width="300" Margin="20" Content="Войти как гость" FontSize="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Black"  Click="LogAsGuest">  </Button>
+        </StackPanel>
+        
+    </StackPanel>
+</Window>
